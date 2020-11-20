@@ -1,6 +1,9 @@
 {
   "name": "nomades",
-  "author": "Woozir",
+  "author": {
+    "name": "Woozir",
+    "email": "contact@woozir.app"
+  },
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
