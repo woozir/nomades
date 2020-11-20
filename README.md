@@ -13,7 +13,6 @@ npm run electron-dev
 
 ## Build
 
-````
+```
 npm run pack
 ```
-````
