@@ -80,6 +80,14 @@
     ],
     "directories": {
       "buildResources": "assets"
+    },
+    "linux": {
+      "target": "deb",
+      "executableName": "Nomades",
+      "desktop": {
+        "Name": "Nomades",
+        "Categories": "internet"
+      }
     }
   }
 }
