@@ -82,7 +82,7 @@
       "buildResources": "assets"
     },
     "linux": {
-      "target": "deb",
+      "target": "AppImage",
       "executableName": "Nomades",
       "desktop": {
         "Name": "Nomades",
