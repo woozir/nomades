@@ -82,7 +82,7 @@
       "buildResources": "assets"
     },
     "linux": {
-      "target": "deb",
+      "target": "zip",
       "executableName": "Nomades",
       "desktop": {
         "Name": "Nomades",
