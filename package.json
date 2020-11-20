@@ -39,6 +39,7 @@
     "build": "npm run watch:css react-scripts build",
     "electron-dev": "concurrently \"cross-env BROWSER=none npm run start\" \"wait-on http://localhost:3000 && electron .\"",
     "pack": "electron-builder --dir",
+    "pack-pi": "electron-builder --dir --armv7l --linux deb",
     "dist": "electron-builder",
     "preelectron-pack": "npm run build",
     "release": "npm run react-build && electron-builder --publish=always",
