@@ -11,11 +11,18 @@ type IUser = {
 
 const Home = () => {
   const [indexUsers, setIndexUsers] = useState(0);
+  const headers = new Headers();
+  headers.append("sectoken", process.env.REACT_APP_SECTOKEN as string);
 
   const { isLoading, error, data } = useQuery<IUser[], Error>(
     "users",
     async () => {
-      const data = await fetch("http://localhost:3001/v0/users").then((res) => res.json());
+      const data = await fetch("http://localhost:3001/v0/users", {
+        method: "GET",
+        headers: headers,
+        mode: "cors",
+        cache: "default",
+      }).then((res) => res.json());
       return data;
     },
     { refetchInterval: 5000 },

@@ -10,6 +10,7 @@ type UserButtonProps = {
 
 const UserButton: FunctionComponent<UserButtonProps> = ({ present, username, id }) => {
   const cache = useQueryCache();
+
   const updatePresence = async () => {
     const updatePayload = {
       id,
@@ -21,6 +22,7 @@ const UserButton: FunctionComponent<UserButtonProps> = ({ present, username, id 
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
+        sectoken: process.env.REACT_APP_SECTOKEN as string,
       },
       body: JSON.stringify(updatePayload),
     });
