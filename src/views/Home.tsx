@@ -12,8 +12,13 @@ type IUser = {
 const Home = () => {
   const [indexUsers, setIndexUsers] = useState(0);
 
-  const { isLoading, error, data } = useQuery<IUser[], Error>("users", () =>
-    fetch("http://localhost:3001/v0/users").then((res) => res.json()),
+  const { isLoading, error, data } = useQuery<IUser[], Error>(
+    "users",
+    async () => {
+      const data = await fetch("http://localhost:3001/v0/users").then((res) => res.json());
+      return data;
+    },
+    { refetchInterval: 5000 },
   );
 
   if (isLoading) return <div>Loading...</div>;
@@ -46,7 +51,7 @@ const Home = () => {
       const nextValue = indexUsers + 1;
       if (indexUsers < maxIndex - 1) setIndexUsers(nextValue);
     };
-    //const visibleUsers =
+
     return (
       <div className="grid grid-cols-3 h-screen">
         <div className="col-span-2 ">
